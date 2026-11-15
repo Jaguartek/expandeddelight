@@ -23,9 +23,6 @@
 		],
 		"fabric-datagen": [
 			"ianm1647.expandeddelight.data.EDDataGenerators"
-		],
-		"mm:early_risers": [
-			"ianm1647.expandeddelight.ExpandedDelightASM"
 		]
 	},
 	"mixins": [

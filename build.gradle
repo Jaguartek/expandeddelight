@@ -40,10 +40,6 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	include(modImplementation("com.github.Chocohead:Fabric-ASM:${fabric_asm_version}")) {
-		exclude (group: "net.fabricmc.fabric-api")
-	}
-
 	modImplementation("vectorwing:FarmersDelight:${delight_version}") {
 		exclude(group: "net.fabricmc")
 	}

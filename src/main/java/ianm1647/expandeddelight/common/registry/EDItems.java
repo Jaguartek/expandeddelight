@@ -1,10 +1,7 @@
 package ianm1647.expandeddelight.common.registry;
 
 import com.google.common.collect.Sets;
-import ianm1647.expandeddelight.common.entity.CinnamonBoat;
-import ianm1647.expandeddelight.common.item.CinnamonBoatItem;
 import ianm1647.expandeddelight.common.item.JellyItem;
-import ianm1647.expandeddelight.common.item.JuicerItem;
 import ianm1647.expandeddelight.common.item.LilypadCropItem;
 import ianm1647.expandeddelight.common.utility.RegUtils;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -44,10 +41,7 @@ public class EDItems {
     public static Supplier<Item> CINNAMON_SIGN;
     public static Supplier<Item> CINNAMON_HANGING_SIGN;
     public static Supplier<Item> CINNAMON_CABINET;
-    public static Supplier<Item> CINNAMON_BOAT;
-    public static Supplier<Item> CINNAMON_CHEST_BOAT;
 
-    public static Supplier<Item> JUICER;
     public static Supplier<Item> CASK;
     public static Supplier<Item> MILK_CASK;
     public static Supplier<Item> GOAT_MILK_CASK;
@@ -188,10 +182,7 @@ public class EDItems {
         CINNAMON_SIGN = registerWithTab("cinnamon_sign", () -> new SignItem(basicItem(), EDBlocks.CINNAMON_SIGN.get(), EDBlocks.CINNAMON_WALL_SIGN.get()));
         CINNAMON_HANGING_SIGN = registerWithTab("cinnamon_hanging_sign", () -> new HangingSignItem(EDBlocks.CINNAMON_CEILING_HANGING_SIGN.get(), EDBlocks.CINNAMON_WALL_HANGING_SIGN.get(), basicItem()));
         CINNAMON_CABINET = registerWithTab("cinnamon_cabinet", () -> new BlockItem(EDBlocks.CINNAMON_CABINET.get(), basicItem()));
-        CINNAMON_BOAT = registerWithTab("cinnamon_boat", () -> new CinnamonBoatItem(false, CinnamonBoat.Type.CINNAMON, new Item.Properties().stacksTo(1)));
-        CINNAMON_CHEST_BOAT = registerWithTab("cinnamon_chest_boat", () -> new CinnamonBoatItem(true, CinnamonBoat.Type.CINNAMON, new Item.Properties().stacksTo(1)));
 
-        JUICER = registerWithTab("juicer", () -> new JuicerItem(EDBlocks.JUICER.get(), basicItem()));
         CASK = registerWithTab("cask", () -> new BlockItem(EDBlocks.CASK.get(), basicItem()));
         MILK_CASK = registerWithoutTab("milk_cask", () -> new BlockItem(EDBlocks.MILK_CASK.get(), basicItem()));
         CHEESE_CASK = registerWithoutTab("cheese_cask", () -> new BlockItem(EDBlocks.CHEESE_CASK.get(), basicItem()));

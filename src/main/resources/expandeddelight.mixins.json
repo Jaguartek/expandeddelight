@@ -3,18 +3,12 @@
   "package": "ianm1647.expandeddelight.common.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "RecipeBookSettingsMixin",
-    "RemoveMilkGoatMixin",
-    "ServerRecipeBookMixin"
+    "RemoveMilkGoatMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "overwrites": {
     "requireAnnotations": true
-  },
-  "client": [
-    "ClientRecipeBookMixin",
-    "RecipeBookCategoriesMixin"
-  ]
+  }
 }

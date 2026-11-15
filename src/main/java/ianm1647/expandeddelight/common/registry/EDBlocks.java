@@ -36,7 +36,6 @@ public class EDBlocks {
     public static Supplier<Block> CINNAMON_WALL_HANGING_SIGN;
     public static Supplier<Block> CINNAMON_CABINET;
 
-    public static Supplier<Block> JUICER;
     public static Supplier<Block> CASK;
     public static Supplier<Block> MILK_CASK;
     public static Supplier<Block> GOAT_MILK_CASK;
@@ -107,8 +106,6 @@ public class EDBlocks {
         CINNAMON_WALL_HANGING_SIGN = RegUtils.regBlock("cinnamon_wall_hanging_sign", CinnamonWallHangingSignBlock::new);
         CINNAMON_CABINET = RegUtils.regBlock("cinnamon_cabinet", CinnamonCabinetBlock::new);
 
-        JUICER = RegUtils.regBlock("juicer",
-                () -> new JuicerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(0.5F, 1.0F).sound(SoundType.BAMBOO_WOOD)));
         CASK = RegUtils.regBlock("cask",
                     () -> new CaskBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.0F, 1.0F).sound(SoundType.CHERRY_WOOD)));
         MILK_CASK = RegUtils.regBlock("milk_cask",
