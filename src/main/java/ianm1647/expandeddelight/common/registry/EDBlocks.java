@@ -18,23 +18,7 @@ public class EDBlocks {
     public static Supplier<Block> CINNAMON_SAPLING;
     public static Supplier<Block> CINNAMON_LEAVES;
     public static Supplier<Block> CINNAMON_LOG;
-    public static Supplier<Block> CINNAMON_WOOD;
     public static Supplier<Block> CINNAMON_STRIPPED_LOG;
-    public static Supplier<Block> CINNAMON_STRIPPED_WOOD;
-    public static Supplier<Block> CINNAMON_PLANKS;
-    public static Supplier<Block> CINNAMON_STAIRS;
-    public static Supplier<Block> CINNAMON_SLAB;
-    public static Supplier<Block> CINNAMON_FENCE;
-    public static Supplier<Block> CINNAMON_FENCE_GATE;
-    public static Supplier<Block> CINNAMON_DOOR;
-    public static Supplier<Block> CINNAMON_TRAPDOOR;
-    public static Supplier<Block> CINNAMON_PRESSURE_PLATE;
-    public static Supplier<Block> CINNAMON_BUTTON;
-    public static Supplier<Block> CINNAMON_SIGN;
-    public static Supplier<Block> CINNAMON_WALL_SIGN;
-    public static Supplier<Block> CINNAMON_CEILING_HANGING_SIGN;
-    public static Supplier<Block> CINNAMON_WALL_HANGING_SIGN;
-    public static Supplier<Block> CINNAMON_CABINET;
 
     public static Supplier<Block> CASK;
     public static Supplier<Block> MILK_CASK;
@@ -76,35 +60,8 @@ public class EDBlocks {
                 () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
         CINNAMON_LOG = RegUtils.regBlock("cinnamon_log",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
-        CINNAMON_WOOD = RegUtils.regBlock("cinnamon_wood",
-                () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
         CINNAMON_STRIPPED_LOG = RegUtils.regBlock("stripped_cinnamon_log",
                 () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
-        CINNAMON_STRIPPED_WOOD = RegUtils.regBlock("stripped_cinnamon_wood",
-                () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
-        CINNAMON_PLANKS = RegUtils.regBlock("cinnamon_planks",
-                () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-        CINNAMON_STAIRS = RegUtils.regBlock("cinnamon_stairs",
-                () -> new StairBlock(CINNAMON_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
-        CINNAMON_SLAB = RegUtils.regBlock("cinnamon_slab",
-                () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
-        CINNAMON_FENCE = RegUtils.regBlock("cinnamon_fence",
-                () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
-        CINNAMON_FENCE_GATE = RegUtils.regBlock("cinnamon_fence_gate",
-                () -> new FenceGateBlock(EDWoodTypes.CINNAMON, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
-        CINNAMON_DOOR = RegUtils.regBlock("cinnamon_door",
-                () -> new DoorBlock(EDWoodTypes.CINNAMON.setType(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
-        CINNAMON_TRAPDOOR = RegUtils.regBlock("cinnamon_trapdoor",
-                () -> new TrapDoorBlock(EDWoodTypes.CINNAMON.setType(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
-        CINNAMON_PRESSURE_PLATE = RegUtils.regBlock("cinnamon_pressure_plate",
-                () -> new PressurePlateBlock(EDWoodTypes.CINNAMON.setType(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
-        CINNAMON_BUTTON = RegUtils.regBlock("cinnamon_button",
-                () -> new ButtonBlock(EDWoodTypes.CINNAMON.setType(), 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
-        CINNAMON_SIGN = RegUtils.regBlock("cinnamon_sign", CinnamonStandingSignBlock::new);
-        CINNAMON_WALL_SIGN = RegUtils.regBlock("cinnamon_wall_sign", CinnamonWallSignBlock::new);
-        CINNAMON_CEILING_HANGING_SIGN = RegUtils.regBlock("cinnamon_ceiling_hanging_sign", CinnamonCeilingHangingSignBlock::new);
-        CINNAMON_WALL_HANGING_SIGN = RegUtils.regBlock("cinnamon_wall_hanging_sign", CinnamonWallHangingSignBlock::new);
-        CINNAMON_CABINET = RegUtils.regBlock("cinnamon_cabinet", CinnamonCabinetBlock::new);
 
         CASK = RegUtils.regBlock("cask",
                     () -> new CaskBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(1.0F, 1.0F).sound(SoundType.CHERRY_WOOD)));

@@ -26,21 +26,7 @@ public class EDItems {
     public static Supplier<Item> CINNAMON_SAPLING;
     public static Supplier<Item> CINNAMON_LEAVES;
     public static Supplier<Item> CINNAMON_LOG;
-    public static Supplier<Item> CINNAMON_WOOD;
     public static Supplier<Item> CINNAMON_STRIPPED_LOG;
-    public static Supplier<Item> CINNAMON_STRIPPED_WOOD;
-    public static Supplier<Item> CINNAMON_PLANKS;
-    public static Supplier<Item> CINNAMON_STAIRS;
-    public static Supplier<Item> CINNAMON_SLAB;
-    public static Supplier<Item> CINNAMON_FENCE;
-    public static Supplier<Item> CINNAMON_FENCE_GATE;
-    public static Supplier<Item> CINNAMON_DOOR;
-    public static Supplier<Item> CINNAMON_TRAPDOOR;
-    public static Supplier<Item> CINNAMON_PRESSURE_PLATE;
-    public static Supplier<Item> CINNAMON_BUTTON;
-    public static Supplier<Item> CINNAMON_SIGN;
-    public static Supplier<Item> CINNAMON_HANGING_SIGN;
-    public static Supplier<Item> CINNAMON_CABINET;
 
     public static Supplier<Item> CASK;
     public static Supplier<Item> MILK_CASK;
@@ -167,21 +153,7 @@ public class EDItems {
         CINNAMON_SAPLING = registerWithTab("cinnamon_sapling", () -> new BlockItem(EDBlocks.CINNAMON_SAPLING.get(), basicItem()));
         CINNAMON_LEAVES = registerWithTab("cinnamon_leaves", () -> new BlockItem(EDBlocks.CINNAMON_LEAVES.get(), basicItem()));
         CINNAMON_LOG = registerWithTab("cinnamon_log", () -> new BlockItem(EDBlocks.CINNAMON_LOG.get(), basicItem()));
-        CINNAMON_WOOD = registerWithTab("cinnamon_wood", () -> new BlockItem(EDBlocks.CINNAMON_WOOD.get(), basicItem()));
         CINNAMON_STRIPPED_LOG = registerWithTab("stripped_cinnamon_log", () -> new BlockItem(EDBlocks.CINNAMON_STRIPPED_LOG.get(), basicItem()));
-        CINNAMON_STRIPPED_WOOD = registerWithTab("stripped_cinnamon_wood", () -> new BlockItem(EDBlocks.CINNAMON_STRIPPED_WOOD.get(), basicItem()));
-        CINNAMON_PLANKS = registerWithTab("cinnamon_planks", () -> new BlockItem(EDBlocks.CINNAMON_PLANKS.get(), basicItem()));
-        CINNAMON_STAIRS = registerWithTab("cinnamon_stairs", () -> new BlockItem(EDBlocks.CINNAMON_STAIRS.get(), basicItem()));
-        CINNAMON_SLAB = registerWithTab("cinnamon_slab", () -> new BlockItem(EDBlocks.CINNAMON_SLAB.get(), basicItem()));
-        CINNAMON_FENCE = registerWithTab("cinnamon_fence", () -> new BlockItem(EDBlocks.CINNAMON_FENCE.get(), basicItem()));
-        CINNAMON_FENCE_GATE = registerWithTab("cinnamon_fence_gate", () -> new BlockItem(EDBlocks.CINNAMON_FENCE_GATE.get(), basicItem()));
-        CINNAMON_DOOR = registerWithTab("cinnamon_door", () -> new BlockItem(EDBlocks.CINNAMON_DOOR.get(), basicItem()));
-        CINNAMON_TRAPDOOR = registerWithTab("cinnamon_trapdoor", () -> new BlockItem(EDBlocks.CINNAMON_TRAPDOOR.get(), basicItem()));
-        CINNAMON_PRESSURE_PLATE = registerWithTab("cinnamon_pressure_plate", () -> new BlockItem(EDBlocks.CINNAMON_PRESSURE_PLATE.get(), basicItem()));
-        CINNAMON_BUTTON = registerWithTab("cinnamon_button", () -> new BlockItem(EDBlocks.CINNAMON_BUTTON.get(), basicItem()));
-        CINNAMON_SIGN = registerWithTab("cinnamon_sign", () -> new SignItem(basicItem(), EDBlocks.CINNAMON_SIGN.get(), EDBlocks.CINNAMON_WALL_SIGN.get()));
-        CINNAMON_HANGING_SIGN = registerWithTab("cinnamon_hanging_sign", () -> new HangingSignItem(EDBlocks.CINNAMON_CEILING_HANGING_SIGN.get(), EDBlocks.CINNAMON_WALL_HANGING_SIGN.get(), basicItem()));
-        CINNAMON_CABINET = registerWithTab("cinnamon_cabinet", () -> new BlockItem(EDBlocks.CINNAMON_CABINET.get(), basicItem()));
 
         CASK = registerWithTab("cask", () -> new BlockItem(EDBlocks.CASK.get(), basicItem()));
         MILK_CASK = registerWithoutTab("milk_cask", () -> new BlockItem(EDBlocks.MILK_CASK.get(), basicItem()));

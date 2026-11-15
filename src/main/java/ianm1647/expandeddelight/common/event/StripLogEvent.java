@@ -33,14 +33,6 @@ public class StripLogEvent {
                     player.swing(hand);
                     return InteractionResult.SUCCESS;
                 }
-                if (state.is(EDBlocks.CINNAMON_WOOD.get())) {
-                    popResource(level, pos, new ItemStack(EDItems.CINNAMON_STICK.get(), 3));
-                    level.setBlock(pos, EDBlocks.CINNAMON_STRIPPED_WOOD.get().defaultBlockState(), 3);
-                    level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
-                    stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-                    player.swing(hand);
-                    return InteractionResult.SUCCESS;
-                }
             }
             return InteractionResult.PASS;
         });

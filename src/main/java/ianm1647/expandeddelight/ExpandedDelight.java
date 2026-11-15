@@ -21,7 +21,6 @@ public class ExpandedDelight implements ModInitializer {
 		EDTabs.register();
 
 		EDTreePlacers.register();
-		EDWoodTypes.bootstrap();
 
 		EDEvents.register();
 		LOGGER.info("Expanded Delight is loading...");
