@@ -37,6 +37,7 @@ public class EDVillagerEvents {
             trades.add(itemForEmeraldTrade(EDItems.CHILI_PEPPER_SEEDS.get(), 1, 1, 12));
             trades.add(itemForEmeraldTrade(EDItems.SWEET_POTATO.get(), 1, 1, 12));
             trades.add(itemForEmeraldTrade(EDItems.PEANUT.get(), 1, 1, 12));
+            trades.add(itemForEmeraldTrade(EDItems.CINNAMON_SAPLING.get(), 1, 1, 12));
         });
     }
 
