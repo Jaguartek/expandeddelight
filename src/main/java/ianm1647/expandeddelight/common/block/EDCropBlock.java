@@ -2,6 +2,7 @@ package ianm1647.expandeddelight.common.block;
 
 import ianm1647.expandeddelight.common.registry.EDBlocks;
 import ianm1647.expandeddelight.common.registry.EDItems;
+import ianm1647.expandeddelight.common.utility.RegUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
@@ -17,20 +18,20 @@ public class EDCropBlock extends CropBlock {
 
 
     public EDCropBlock() {
-        super(Properties.ofFullCopy(Blocks.WHEAT).instabreak().randomTicks().noCollission());
+        super(RegUtils.blockPropsCopy(Blocks.WHEAT).instabreak().randomTicks().noCollision());
     }
 
     protected ItemLike getBaseSeedId() {
-        if(this == EDBlocks.ASPARAGUS_CROP) {
+        if(this == EDBlocks.ASPARAGUS_CROP.get()) {
             return EDItems.ASPARAGUS_SEEDS.get();
         }
-        if(this == EDBlocks.SWEET_POTATO_CROP) {
+        if(this == EDBlocks.SWEET_POTATO_CROP.get()) {
             return EDItems.SWEET_POTATO.get();
         }
-        if(this == EDBlocks.CHILI_PEPPER_CROP) {
+        if(this == EDBlocks.CHILI_PEPPER_CROP.get()) {
             return EDItems.CHILI_PEPPER_SEEDS.get();
         }
-        if(this == EDBlocks.PEANUT_CROP) {
+        if(this == EDBlocks.PEANUT_CROP.get()) {
             return EDItems.PEANUT.get();
         }
         return this;

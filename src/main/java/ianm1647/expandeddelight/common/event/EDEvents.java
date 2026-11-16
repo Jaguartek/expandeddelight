@@ -5,7 +5,6 @@ public class EDEvents {
     public static void register() {
         StripLogEvent.init();
         MilkGoatEvent.init();
-        EDVillagerEvents.init();
     }
 
 }

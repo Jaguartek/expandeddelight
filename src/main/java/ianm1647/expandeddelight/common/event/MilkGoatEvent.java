@@ -25,7 +25,7 @@ public class MilkGoatEvent {
                     player.playSound(SoundEvents.GOAT_MILK, 1.0f, 1.0f);
                     ItemStack nonNullStack = ItemUtils.createFilledResult(stack, player, item.getDefaultInstance());
                     player.setItemInHand(hand, nonNullStack);
-                    return InteractionResult.sidedSuccess(level.isClientSide);
+                    return InteractionResult.SUCCESS;
                 }
             }
             return InteractionResult.PASS;

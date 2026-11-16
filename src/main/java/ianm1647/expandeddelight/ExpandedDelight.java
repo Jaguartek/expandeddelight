@@ -5,7 +5,7 @@ import ianm1647.expandeddelight.common.registry.*;
 import ianm1647.expandeddelight.common.world.tree.EDTreePlacers;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +26,7 @@ public class ExpandedDelight implements ModInitializer {
 		LOGGER.info("Expanded Delight is loading...");
 	}
 
-	public static ResourceLocation loc(String path) {
-		return ResourceLocation.fromNamespaceAndPath(MODID, path);
+	public static Identifier loc(String path) {
+		return Identifier.fromNamespaceAndPath(MODID, path);
 	}
 }

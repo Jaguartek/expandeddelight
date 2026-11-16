@@ -38,7 +38,7 @@ public class MilkCaskBlock extends Block {
     }
 
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             float chance = 0.0F;
             boolean hasWater = false;
             int maxLight = 0;
