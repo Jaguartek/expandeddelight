@@ -6,16 +6,17 @@ import ianm1647.expandeddelight.common.item.LilypadCropItem;
 import ianm1647.expandeddelight.common.utility.RegUtils;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
 import net.minecraft.world.item.*;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import java.util.LinkedHashSet;
@@ -185,8 +186,11 @@ public class EDItems {
         SALT_ROCK = registerWithTab("salt_rock", () -> new Item(basicItem()));
         SALT = registerWithTab("salt", () -> new Item(basicItem()));
 
-        GOAT_MILK_BUCKET = registerWithTab("goat_milk_bucket", () -> new MilkBucketItem(basicItem().craftRemainder(Items.BUCKET).stacksTo(1)));
-        GOAT_MILK_BOTTLE = registerWithTab("goat_milk_bottle", () -> new MilkBottleItem(basicItem().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+        GOAT_MILK_BUCKET = registerWithTab("goat_milk_bucket", () -> new Item(basicItem().craftRemainder(Items.BUCKET)
+                .component(DataComponents.CONSUMABLE, Consumables.MILK_BUCKET).usingConvertsTo(Items.BUCKET).stacksTo(1)));
+        GOAT_MILK_BOTTLE = registerWithTab("goat_milk_bottle", () -> new Item(basicItem().craftRemainder(Items.GLASS_BOTTLE).usingConvertsTo(Items.GLASS_BOTTLE).stacksTo(16)
+                .component(DataComponents.CONSUMABLE, Consumable.builder().consumeSeconds(1.6f).animation(ItemUseAnimation.DRINK)
+                        .sound(SoundEvents.HONEY_DRINK).onConsume(new ClearAllStatusEffectsConsumeEffect()).build())));
 
         ASPARAGUS_SEEDS = registerWithTab("asparagus_seeds", () -> new BlockItem(EDBlocks.ASPARAGUS_CROP.get(), basicItem().useItemDescriptionPrefix()));
         ASPARAGUS = registerWithTab("asparagus", () -> new Item(foodItem(2, 0.2f)));
@@ -230,10 +234,10 @@ public class EDItems {
         CINNAMON_RICE = registerWithTab("cinnamon_rice", () -> new Item(foodItem(7, 0.5f).craftRemainder(Items.BOWL)));
         CINNAMON_APPLES = registerWithTab("cinnamon_apples", () -> new Item(foodItem(7, 0.5f).craftRemainder(Items.BOWL)));
 
-        APPLE_JUICE = registerWithTab("apple_juice", () -> new DrinkableItem(drinkItem(1, 1.2f, MobEffects.MOVEMENT_SPEED), true));
-        SWEET_BERRY_JUICE = registerWithTab("sweet_berry_juice", () -> new DrinkableItem(drinkItem(1, 1.2f, MobEffects.HEALTH_BOOST), true));
-        GLOW_BERRY_JUICE = registerWithTab("glow_berry_juice", () -> new DrinkableItem(drinkItem(1, 1.2f, MobEffects.NIGHT_VISION), true));
-        CRANBERRY_JUICE = registerWithTab("cranberry_juice", () -> new DrinkableItem(drinkItem(1, 1.2f, MobEffects.ABSORPTION), true));
+        APPLE_JUICE = registerWithTab("apple_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.MOVEMENT_SPEED)));
+        SWEET_BERRY_JUICE = registerWithTab("sweet_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.HEALTH_BOOST)));
+        GLOW_BERRY_JUICE = registerWithTab("glow_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.NIGHT_VISION)));
+        CRANBERRY_JUICE = registerWithTab("cranberry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.ABSORPTION)));
 
         SWEET_BERRY_JELLY = registerWithTab("sweet_berry_jelly", () -> new JellyItem(jellyItem(3, 0.6f, MobEffects.HEALTH_BOOST), true));
         GLOW_BERRY_JELLY = registerWithTab("glow_berry_jelly", () -> new JellyItem(jellyItem(3, 0.6f, MobEffects.NIGHT_VISION), true));
@@ -285,7 +289,7 @@ public class EDItems {
     }
 
     public static Item.Properties drinkItem(int nutrition, float saturation, Holder<MobEffect> effect) {
-        return basicItem().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+        return basicItem().craftRemainder(Items.GLASS_BOTTLE).usingConvertsTo(Items.GLASS_BOTTLE).stacksTo(16)
                 .food(food(nutrition, saturation), consumable(Consumables.defaultDrink(), effect, 200));
     }
 
