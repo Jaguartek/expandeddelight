@@ -1,0 +1,44 @@
+{
+  "type": "farmersdelight:in_order",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "minecraft:simple_block",
+          "config": {
+            "to_place": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "expandeddelight:cranberry_plant"
+              }
+            }
+          }
+        },
+        "placement": [
+          {
+            "type": "minecraft:random_offset",
+            "xz_spread": {
+              "type": "minecraft:trapezoid",
+              "max": 6,
+              "min": -6,
+              "plateau": 0
+            },
+            "y_spread": {
+              "type": "minecraft:trapezoid",
+              "max": 3,
+              "min": -3,
+              "plateau": 0
+            }
+          },
+          {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:air"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

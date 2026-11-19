@@ -1,5 +1,5 @@
 {
-  "feature": "expandeddelight:patch_cranberries",
+  "feature": "expandeddelight:patch_wild_asparagus",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
@@ -9,8 +9,12 @@
       "type": "minecraft:in_square"
     },
     {
+      "type": "minecraft:count",
+      "count": 64
+    },
+    {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"

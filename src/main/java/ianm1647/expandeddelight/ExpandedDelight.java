@@ -2,6 +2,7 @@ package ianm1647.expandeddelight;
 
 import ianm1647.expandeddelight.common.event.EDEvents;
 import ianm1647.expandeddelight.common.registry.*;
+import ianm1647.expandeddelight.common.world.EDWorldGen;
 import ianm1647.expandeddelight.common.world.tree.EDTreePlacers;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,7 @@ public class ExpandedDelight implements ModInitializer {
 		EDTabs.register();
 
 		EDTreePlacers.register();
+		EDWorldGen.register();
 
 		EDEvents.register();
 		LOGGER.info("Expanded Delight is loading...");

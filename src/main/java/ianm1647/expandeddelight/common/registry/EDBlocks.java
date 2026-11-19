@@ -74,9 +74,9 @@ public class EDBlocks {
         GOAT_CHEESE_CASK = RegUtils.regBlock("goat_cheese_cask",
                 () -> new CheeseCaskBlock(RegUtils.blockProps().mapColor(MapColor.WOOD).strength(1.0F, 1.0F).sound(SoundType.CHERRY_WOOD)));
         CHEESE_WHEEL = RegUtils.regBlock("cheese_wheel",
-                    () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), EDItems.CHEESE_SLICE));
+                    () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CHEESE_SLICE.get()));
         GOAT_CHEESE_WHEEL = RegUtils.regBlock("goat_cheese_wheel",
-                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), EDItems.GOAT_CHEESE_SLICE));
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.GOAT_CHEESE_SLICE.get()));
 
         ASPARAGUS_CRATE = RegUtils.regBlock("asparagus_crate",
                 () -> new CrateBlock(RegUtils.blockPropsCopy(Blocks.OAK_PLANKS)));
@@ -106,9 +106,9 @@ public class EDBlocks {
         CRANBERRY_PLANT = RegUtils.regBlock("cranberry_plant",
                 () -> new CranberryPlantBlock(RegUtils.blockPropsCopy(Blocks.LILY_PAD).mapColor(MapColor.PLANT).sound(SoundType.LILY_PAD)));
         CRANBERRY_COBBLER = RegUtils.regBlock("cranberry_cobbler",
-                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), EDItems.CRANBERRY_COBBLER_SLICE));
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CRANBERRY_COBBLER_SLICE.get()));
         HONEYED_GOAT_CHEESE_TART = RegUtils.regBlock("honeyed_goat_cheese_tart",
-                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), EDItems.HONEYED_GOAT_CHEESE_TART_SLICE));
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.HONEYED_GOAT_CHEESE_TART_SLICE.get()));
 
         ASPARAGUS_CROP = RegUtils.regBlock("asparagus_crop", EDCropBlock::new);
         SWEET_POTATO_CROP = RegUtils.regBlock("sweet_potato_crop", EDCropBlock::new);
