@@ -57,7 +57,7 @@ public class EDBlocks {
         CINNAMON_SAPLING = RegUtils.regBlock("cinnamon_sapling",
                 () -> new SaplingBlock(EDTreeGrowers.CINNAMON, RegUtils.blockPropsCopy(Blocks.OAK_SAPLING)));
         CINNAMON_LEAVES = RegUtils.regBlock("cinnamon_leaves",
-                () -> new LeavesBlock(RegUtils.blockPropsCopy(Blocks.OAK_LEAVES)));
+                () -> new TintedParticleLeavesBlock(0.0F, RegUtils.blockPropsCopy(Blocks.OAK_LEAVES)));
         CINNAMON_LOG = RegUtils.regBlock("cinnamon_log",
                 () -> new RotatedPillarBlock(RegUtils.blockPropsCopy(Blocks.OAK_LOG)));
         CINNAMON_STRIPPED_LOG = RegUtils.regBlock("stripped_cinnamon_log",
@@ -85,16 +85,16 @@ public class EDBlocks {
         CHILI_PEPPER_CRATE = RegUtils.regBlock("chili_pepper_crate",
                 () -> new CrateBlock(RegUtils.blockPropsCopy(Blocks.OAK_PLANKS)));
         CRANBERRY_BAG = RegUtils.regBlock("cranberry_bag",
-                () -> new CrateBlock(RegUtils.blockPropsCopy(Blocks.RED_WOOL)));
+                () -> new CrateBlock(RegUtils.blockProps().mapColor(MapColor.COLOR_RED).strength(0.8F).sound(SoundType.WOOL).ignitedByLava()));
 
         WILD_ASPARAGUS  = RegUtils.regBlock("wild_asparagus",
                 () -> new EDWildCropBlock(MobEffects.ABSORPTION, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
         WILD_SWEET_POTATO  = RegUtils.regBlock("wild_sweet_potato",
                 () -> new EDWildCropBlock(MobEffects.OOZING, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
         WILD_CHILI_PEPPER  = RegUtils.regBlock("wild_chili_pepper",
-                () -> new EDWildCropBlock(MobEffects.CONFUSION, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
+                () -> new EDWildCropBlock(MobEffects.NAUSEA, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
         WILD_PEANUTS  = RegUtils.regBlock("wild_peanuts",
-                () -> new EDWildCropBlock(MobEffects.DAMAGE_RESISTANCE, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
+                () -> new EDWildCropBlock(MobEffects.RESISTANCE, 6, RegUtils.blockPropsCopy(Blocks.TALL_GRASS)));
 
         SALT_ORE = RegUtils.regBlock("salt_ore",
                 () -> new DropExperienceBlock(UniformInt.of(0, 2), RegUtils.blockProps().mapColor(MapColor.STONE)

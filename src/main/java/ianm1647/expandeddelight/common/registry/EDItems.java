@@ -12,9 +12,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.component.Consumable;
-import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
-import net.minecraft.world.item.consume_effects.ClearAllStatusEffectsConsumeEffect;
+import net.minecraft.world.item.component.*;
+import net.minecraft.world.item.consume_effects.*;
 import net.minecraft.world.item.*;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -234,7 +233,7 @@ public class EDItems {
         CINNAMON_RICE = registerWithTab("cinnamon_rice", () -> new Item(foodItem(7, 0.5f).craftRemainder(Items.BOWL)));
         CINNAMON_APPLES = registerWithTab("cinnamon_apples", () -> new Item(foodItem(7, 0.5f).craftRemainder(Items.BOWL)));
 
-        APPLE_JUICE = registerWithTab("apple_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.MOVEMENT_SPEED)));
+        APPLE_JUICE = registerWithTab("apple_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.SPEED)));
         SWEET_BERRY_JUICE = registerWithTab("sweet_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.HEALTH_BOOST)));
         GLOW_BERRY_JUICE = registerWithTab("glow_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.NIGHT_VISION)));
         CRANBERRY_JUICE = registerWithTab("cranberry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.ABSORPTION)));

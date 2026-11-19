@@ -53,8 +53,8 @@ public class EDConfiguredFeatures {
                 BlockStateProvider.simple(EDBlocks.CINNAMON_LEAVES.get()),
                 new CinnamonFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), ConstantInt.of(3)),
 
-                new TwoLayersFeatureSize(1, 0, 2))
-                .dirt(BlockStateProvider.simple(Blocks.DIRT))
+                new TwoLayersFeatureSize(1, 0, 2),
+                BlockStateProvider.simple(Blocks.DIRT))
                 .build()));
     }
 

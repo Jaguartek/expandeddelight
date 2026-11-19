@@ -8,7 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,7 +29,7 @@ public class StripLogEvent {
                     popResource(level, pos, new ItemStack(EDItems.CINNAMON_STICK.get(), 2));
                     level.setBlock(pos, EDBlocks.CINNAMON_STRIPPED_LOG.get().defaultBlockState(), 3);
                     level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
-                    stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                    stack.hurtAndBreak(1, player, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
                     player.swing(hand);
                     return InteractionResult.SUCCESS;
                 }
