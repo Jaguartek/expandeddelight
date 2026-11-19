@@ -80,3 +80,45 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+// Temporary helper while porting: searches the game and mod jars and writes what it finds to dump.txt.
+// Run with: gradlew dumpInfo
+tasks.register('dumpInfo') {
+	doLast {
+		def out = new StringBuilder()
+		def seen = [] as Set
+		def fileStarts = [
+			'data/minecraft/worldgen/configured_feature/patch_sugar_cane',
+			'data/minecraft/worldgen/configured_feature/patch_berry_bush',
+			'data/minecraft/worldgen/configured_feature/oak.json',
+			'data/farmersdelight/worldgen/configured_feature/patch_wild_cabbages',
+			'data/farmersdelight/worldgen/placed_feature/patch_wild_cabbages']
+		def tradeDirs = ['data/minecraft/tags/villager_trade/', 'data/minecraft/trade_set/', 'data/minecraft/villager_trade/']
+		def tradeShown = 0
+		configurations.compileClasspath.files.findAll { it.name.endsWith('.jar') }.each { jar ->
+			def zip = new java.util.zip.ZipFile(jar)
+			try {
+				def fab = jar.name.contains('fabric')
+				def fd = jar.name.contains('farmers')
+				Collections.list(zip.entries()).each { e ->
+					def n = e.name
+					if (n.endsWith('.class') && ((fab && (n.contains('LayerMap') || n.contains('BlockRenderLayer') || n.contains('/biome/v1/'))) || (fd && n.matches(/.*(WildCrop|BiomeTag|Feature|Worldgen|WorldGen).*/)))) {
+						out.append("CLASS ${n}  (${jar.name})\n")
+					}
+					if (n.startsWith('data/') && !n.endsWith('/') && seen.add(n)) {
+						boolean trade = tradeDirs.any { n.startsWith(it) } && (n.contains('wandering') || n.contains('farmer'))
+						if (trade) out.append("TRADEFILE ${n}\n")
+						boolean show = fileStarts.any { n.startsWith(it) } || (trade && n.contains('wandering') && tradeShown++ < 4)
+						if (show) {
+							out.append("==== ${n}  (${jar.name})\n")
+							out.append(zip.getInputStream(e).getText('UTF-8').readLines().take(70).join('\n')).append('\n')
+						}
+					}
+				}
+			} finally {
+				zip.close()
+			}
+		}
+		file('dump.txt').text = out.toString()
+		println "Wrote ${file('dump.txt').absolutePath} (${out.length()} characters)"
+	}
+}
