@@ -86,33 +86,40 @@ tasks.register('dumpInfo') {
 	doLast {
 		def out = new StringBuilder()
 		def seen = [] as Set
-		def fileStarts = [
-			'data/minecraft/worldgen/configured_feature/patch_sugar_cane',
-			'data/minecraft/worldgen/configured_feature/patch_berry_bush',
-			'data/minecraft/worldgen/configured_feature/oak.json',
-			'data/farmersdelight/worldgen/configured_feature/patch_wild_cabbages',
-			'data/farmersdelight/worldgen/placed_feature/patch_wild_cabbages']
-		def tradeDirs = ['data/minecraft/tags/villager_trade/', 'data/minecraft/trade_set/', 'data/minecraft/villager_trade/']
-		def tradeShown = 0
+		def printFiles = [
+			'assets/farmersdelight/blockstates/apple_pie.json',
+			'assets/farmersdelight/models/block/pie.json',
+			'assets/farmersdelight/models/block/pie_slice1.json',
+			'data/farmersdelight/worldgen/configured_feature/wild_cabbages.json',
+			'data/minecraft/villager_trade/wandering_trader/emerald_oak_sapling.json',
+			'data/minecraft/villager_trade/wandering_trader/emerald_wheat_seeds.json',
+			'data/minecraft/villager_trade/farmer/1/wheat_emerald.json',
+			'data/minecraft/villager_trade/farmer/1/emerald_bread.json',
+			'data/minecraft/trade_set/farmer/level_1.json',
+			'data/minecraft/trade_set/wandering_trader/common.json',
+			'data/minecraft/tags/villager_trade/farmer/level_1.json',
+			'data/farmersdelight/villager_trade/wandering_trader/cabbage_emerald.json']
 		configurations.compileClasspath.files.findAll { it.name.endsWith('.jar') }.each { jar ->
 			def zip = new java.util.zip.ZipFile(jar)
 			try {
 				def fab = jar.name.contains('fabric')
-				def fd = jar.name.contains('farmers')
+				def mc = jar.name.contains('minecraft')
 				Collections.list(zip.entries()).each { e ->
 					def n = e.name
-					if (n.endsWith('.class') && ((fab && (n.contains('LayerMap') || n.contains('BlockRenderLayer') || n.contains('/biome/v1/'))) || (fd && n.matches(/.*(WildCrop|BiomeTag|Feature|Worldgen|WorldGen).*/)))) {
-						out.append("CLASS ${n}  (${jar.name})\n")
+					if (e.isDirectory() || !seen.add(n)) return
+					if (n in printFiles) {
+						out.append("==== ${n}  (${jar.name})\n")
+						out.append(zip.getInputStream(e).getText('UTF-8').readLines().take(120).join('\n')).append('\n')
 					}
-					if (n.startsWith('data/') && !n.endsWith('/') && seen.add(n)) {
-						boolean trade = tradeDirs.any { n.startsWith(it) } && (n.contains('wandering') || n.contains('farmer'))
-						if (trade) out.append("TRADEFILE ${n}\n")
-						boolean show = fileStarts.any { n.startsWith(it) } || (trade && n.contains('wandering') && tradeShown++ < 4)
-						if (show) {
-							out.append("==== ${n}  (${jar.name})\n")
-							out.append(zip.getInputStream(e).getText('UTF-8').readLines().take(70).join('\n')).append('\n')
-						}
+					if (n.startsWith('assets/farmersdelight/') && n.contains('pie')) out.append("LIST ${n}\n")
+					if (n.startsWith('data/farmersdelight/') && (n.contains('/worldgen/') || n.contains('villager_trade') || n.contains('trade_set'))) out.append("LIST ${n}\n")
+					if (n.startsWith('data/minecraft/worldgen/configured_feature/') && (n.contains('patch') || n.contains('berry') || n.contains('sugar') || n.contains('flower'))) out.append("LIST ${n}\n")
+					if (fab && n.startsWith('net/fabricmc/fabric/api/client/rendering/v1/') && n.endsWith('.class') && !n.contains('$')) out.append("LIST ${n}\n")
+					if (fab && n.endsWith('.class') && n.contains('/api/')) {
+						def text = new String(zip.getInputStream(e).readAllBytes(), 'ISO-8859-1')
+						if (text.contains('ChunkSectionLayer')) out.append("REFS ChunkSectionLayer: ${n}  (${jar.name})\n")
 					}
+					if (mc && n.endsWith('.class') && (n.contains('ChunkSectionLayer') || n.contains('BlockRenderType') || n.contains('ItemBlockRender'))) out.append("MC ${n}\n")
 				}
 			} finally {
 				zip.close()
