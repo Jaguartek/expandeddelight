@@ -3,13 +3,14 @@
 	"id": "expandeddelight",
 	"version": "${version}",
 	"name": "Expanded Delight",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Expanded Delight adds new crops, cheeses, meals and drinks that expand on Farmer's Delight. Fabric port for Minecraft 26.2 of the mod by ianm1647.",
 	"authors": [
-		"Me!"
+		"ianm1647 (original mod)",
+		"Jaguartek (Fabric 26.2 port)"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/ianm1647/expandeddelight",
+		"sources": "https://github.com/Jaguartek/expandeddelight"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/expandeddelight/icon.png",
