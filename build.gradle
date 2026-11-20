@@ -80,3 +80,37 @@ publishing {
 		// retrieving dependencies.
 	}
 }
+
+// Temporary helper while porting: prints files from the game and mod jars into dump.txt.
+// Usage: gradlew dumpInfo "-PdumpPrint=path/a.json,path/folder/*" "-PdumpList=path/prefix/"
+// A path ending in /* prints the first two files in that folder. dumpList only lists file names.
+tasks.register('dumpInfo') {
+	doLast {
+		def prints = (project.findProperty('dumpPrint') ?: '').toString().split(',').collect { it.trim() }.findAll { it }
+		def lists = (project.findProperty('dumpList') ?: '').toString().split(',').collect { it.trim() }.findAll { it }
+		def out = new StringBuilder()
+		def seen = [] as Set
+		def shown = [:].withDefault { 0 }
+		configurations.compileClasspath.files.findAll { it.name.endsWith('.jar') }.each { jar ->
+			def zip = new java.util.zip.ZipFile(jar)
+			try {
+				Collections.list(zip.entries()).each { e ->
+					def n = e.name
+					if (e.isDirectory() || !seen.add(n)) return
+					prints.each { p ->
+						boolean hit = p.endsWith('/*') ? (n.startsWith(p.substring(0, p.length() - 1)) && shown[p]++ < 2) : n == p
+						if (hit) {
+							out.append("==== ${n}  (${jar.name})\n")
+							out.append(zip.getInputStream(e).getText('UTF-8').readLines().take(120).join('\n')).append('\n')
+						}
+					}
+					if (lists.any { n.startsWith(it) }) out.append("LIST ${n}\n")
+				}
+			} finally {
+				zip.close()
+			}
+		}
+		file('dump.txt').text = out.toString()
+		println "Wrote ${file('dump.txt').absolutePath} (${out.length()} characters)"
+	}
+}
