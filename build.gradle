@@ -84,9 +84,11 @@ publishing {
 // Temporary helper while porting: prints files from the game and mod jars into dump.txt.
 // Usage: gradlew dumpInfo "-PdumpPrint=path/a.json,path/folder/*" "-PdumpList=path/prefix/"
 // A path ending in /* prints the first two files in that folder. dumpList only lists file names.
+// dumpJavap takes class file paths and prints their bytecode (javap -c -p).
 tasks.register('dumpInfo') {
 	doLast {
 		def prints = (project.findProperty('dumpPrint') ?: '').toString().split(',').collect { it.trim() }.findAll { it }
+		def javaps = (project.findProperty('dumpJavap') ?: '').toString().split(',').collect { it.trim() }.findAll { it }
 		def lists = (project.findProperty('dumpList') ?: '').toString().split(',').collect { it.trim() }.findAll { it }
 		def out = new StringBuilder()
 		def seen = [] as Set
@@ -105,6 +107,15 @@ tasks.register('dumpInfo') {
 						}
 					}
 					if (lists.any { n.startsWith(it) }) out.append("LIST ${n}\n")
+					if (n in javaps) {
+						def tmp = java.nio.file.Files.createTempDirectory('dumpjavap').toFile()
+						def target = new File(tmp, n); target.parentFile.mkdirs()
+						target.bytes = zip.getInputStream(e).readAllBytes()
+						def bin = new File(System.getProperty('java.home'), 'bin')
+						def exe = new File(bin, 'javap.exe').exists() ? new File(bin, 'javap.exe') : new File(bin, 'javap')
+						def proc = new ProcessBuilder(exe.absolutePath, '-c', '-p', '-cp', tmp.absolutePath, n.replace('/', '.').replace('.class', '')).redirectErrorStream(true).start()
+						out.append("==== javap ${n}\n").append(proc.inputStream.getText('UTF-8')).append('\n')
+					}
 				}
 			} finally {
 				zip.close()
