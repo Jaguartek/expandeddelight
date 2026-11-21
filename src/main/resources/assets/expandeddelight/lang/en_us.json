@@ -96,5 +96,6 @@
   "expandeddelight.jei.info.wild_peanuts": "Peanuts can be commonly found as a wild plant in savanna biomes.",
   "expandeddelight.jei.info.cranberries": "Cranberries can be commonly found as a wild plant in swamp biomes.",
   "expandeddelight.jei.info.salt_ore": "Salt Ore can be commonly found underground specifically in ocean biomes.",
-  "farmersdelight.tooltip.goat_milk_bottle": "Clears 1 Effect"
+  "farmersdelight.tooltip.goat_milk_bottle": "Clears 1 Effect",
+  "item.expandeddelight.cranberry_jelly_sandwich": "Peanut Butter and Cranberry Jelly Sandwich"
 }
