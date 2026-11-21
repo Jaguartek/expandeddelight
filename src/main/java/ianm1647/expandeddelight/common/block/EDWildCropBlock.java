@@ -5,8 +5,11 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -14,6 +17,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -34,7 +38,14 @@ public class EDWildCropBlock extends FlowerBlock implements BonemealableBlock {
     }
 
     public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(BlockTags.DIRT) || state.is(BlockTags.SAND);
+        return state.is(BlockTags.DIRT) || state.is(BlockTags.SAND) || state.is(Blocks.GRASS_BLOCK)
+                || state.is(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("minecraft", "substrate_overworld")));
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockPos below = pos.below();
+        return this.mayPlaceOn(level.getBlockState(below), level, below);
     }
 
     public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
