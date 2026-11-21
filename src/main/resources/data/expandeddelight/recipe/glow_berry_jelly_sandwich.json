@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:bread",
+    "#expandeddelight:sandwich_bread",
     "expandeddelight:peanut_butter",
     "#c:jams/glow_berry"
   ],

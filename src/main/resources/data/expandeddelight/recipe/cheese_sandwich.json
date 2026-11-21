@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:bread",
+    "#expandeddelight:sandwich_bread",
     "#c:foods/cheese"
   ],
   "result": {
