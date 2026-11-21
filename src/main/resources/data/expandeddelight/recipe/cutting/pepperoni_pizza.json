@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "expandeddelight:pepperoni_pizza"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "expandeddelight:pepperoni_pizza_slice"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

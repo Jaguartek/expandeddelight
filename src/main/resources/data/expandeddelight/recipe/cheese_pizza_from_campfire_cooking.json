@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 900,
+  "experience": 0.6,
+  "ingredient": "expandeddelight:uncooked_cheese_pizza",
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:cheese_pizza"
+  }
+}

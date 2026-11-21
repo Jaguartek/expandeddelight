@@ -98,5 +98,14 @@
   "expandeddelight.jei.info.cranberries": "Cranberries can be commonly found as a wild plant in swamp biomes.",
   "expandeddelight.jei.info.salt_ore": "Salt Ore can be commonly found underground specifically in ocean biomes.",
   "farmersdelight.tooltip.goat_milk_bottle": "Clears 1 Effect",
-  "item.expandeddelight.cranberry_jelly_sandwich": "Peanut Butter and Cranberry Jelly Sandwich"
+  "item.expandeddelight.cranberry_jelly_sandwich": "Peanut Butter and Cranberry Jelly Sandwich",
+  "item.expandeddelight.uncooked_cheese_pizza": "Uncooked Cheese Pizza",
+  "item.expandeddelight.cheese_pizza_slice": "Slice of Cheese Pizza",
+  "block.expandeddelight.cheese_pizza": "Cheese Pizza",
+  "item.expandeddelight.uncooked_sausage_pizza": "Uncooked Sausage Pizza",
+  "item.expandeddelight.sausage_pizza_slice": "Slice of Sausage Pizza",
+  "block.expandeddelight.sausage_pizza": "Sausage Pizza",
+  "item.expandeddelight.uncooked_pepperoni_pizza": "Uncooked Pepperoni Pizza",
+  "item.expandeddelight.pepperoni_pizza_slice": "Slice of Pepperoni Pizza",
+  "block.expandeddelight.pepperoni_pizza": "Pepperoni Pizza"
 }

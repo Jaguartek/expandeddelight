@@ -123,6 +123,15 @@ public class EDItems {
 
     public static Supplier<Item> CRANBERRY_COBBLER;
     public static Supplier<Item> CRANBERRY_COBBLER_SLICE;
+    public static Supplier<Item> UNCOOKED_CHEESE_PIZZA;
+    public static Supplier<Item> CHEESE_PIZZA;
+    public static Supplier<Item> CHEESE_PIZZA_SLICE;
+    public static Supplier<Item> UNCOOKED_SAUSAGE_PIZZA;
+    public static Supplier<Item> SAUSAGE_PIZZA;
+    public static Supplier<Item> SAUSAGE_PIZZA_SLICE;
+    public static Supplier<Item> UNCOOKED_PEPPERONI_PIZZA;
+    public static Supplier<Item> PEPPERONI_PIZZA;
+    public static Supplier<Item> PEPPERONI_PIZZA_SLICE;
     public static Supplier<Item> HONEYED_GOAT_CHEESE_TART;
     public static Supplier<Item> HONEYED_GOAT_CHEESE_TART_SLICE;
     public static Supplier<Item> LEMON_MERINGUE_PIE;
@@ -225,6 +234,15 @@ public class EDItems {
 
         CRANBERRY_COBBLER = registerWithTab("cranberry_cobbler", () -> new BlockItem(EDBlocks.CRANBERRY_COBBLER.get(), basicItem().useBlockDescriptionPrefix()));
         CRANBERRY_COBBLER_SLICE = registerWithTab("cranberry_cobbler_slice", () -> new Item(pieSliceItem(3, 0.3f)));
+        UNCOOKED_CHEESE_PIZZA = registerWithTab("uncooked_cheese_pizza", () -> new Item(basicItem()));
+        CHEESE_PIZZA = registerWithTab("cheese_pizza", () -> new BlockItem(EDBlocks.CHEESE_PIZZA.get(), basicItem().useBlockDescriptionPrefix()));
+        CHEESE_PIZZA_SLICE = registerWithTab("cheese_pizza_slice", () -> new Item(pizzaSliceItem(5, 0.5f)));
+        UNCOOKED_SAUSAGE_PIZZA = registerWithTab("uncooked_sausage_pizza", () -> new Item(basicItem()));
+        SAUSAGE_PIZZA = registerWithTab("sausage_pizza", () -> new BlockItem(EDBlocks.SAUSAGE_PIZZA.get(), basicItem().useBlockDescriptionPrefix()));
+        SAUSAGE_PIZZA_SLICE = registerWithTab("sausage_pizza_slice", () -> new Item(pizzaSliceItem(6, 0.6f)));
+        UNCOOKED_PEPPERONI_PIZZA = registerWithTab("uncooked_pepperoni_pizza", () -> new Item(basicItem()));
+        PEPPERONI_PIZZA = registerWithTab("pepperoni_pizza", () -> new BlockItem(EDBlocks.PEPPERONI_PIZZA.get(), basicItem().useBlockDescriptionPrefix()));
+        PEPPERONI_PIZZA_SLICE = registerWithTab("pepperoni_pizza_slice", () -> new Item(pizzaSliceItem(7, 0.6f)));
         HONEYED_GOAT_CHEESE_TART = registerWithTab("honeyed_goat_cheese_tart", () -> new BlockItem(EDBlocks.HONEYED_GOAT_CHEESE_TART.get(), basicItem().useBlockDescriptionPrefix()));
         HONEYED_GOAT_CHEESE_TART_SLICE = registerWithTab("honeyed_goat_cheese_tart_slice", () -> new Item(pieSliceItem(4, 0.5f)));
 
@@ -302,6 +320,10 @@ public class EDItems {
     public static Item.Properties pieSliceItem(int nutrition, float saturation) {
         return basicItem().food(food(nutrition, saturation),
                 consumable(Consumables.defaultFood().consumeSeconds(0.8f), MobEffects.SPEED, 600));
+    }
+
+    public static Item.Properties pizzaSliceItem(int nutrition, float saturation) {
+        return basicItem().food(food(nutrition, saturation), Consumables.defaultFood().consumeSeconds(0.8f).build());
     }
 
     public static Item.Properties stewItem(int nutrition, float saturation) {

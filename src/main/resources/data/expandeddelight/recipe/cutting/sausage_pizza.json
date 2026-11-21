@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "expandeddelight:sausage_pizza"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "expandeddelight:sausage_pizza_slice"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

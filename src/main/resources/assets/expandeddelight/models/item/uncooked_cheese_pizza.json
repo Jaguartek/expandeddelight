@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "expandeddelight:item/uncooked_cheese_pizza"
+  }
+}

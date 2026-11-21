@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "farmersdelight:tomato_sauce",
+    "#c:foods/cheese",
+    "#c:foods/cheese",
+    "#c:foods/cheese",
+    "farmersdelight:wheat_dough",
+    "minecraft:beef",
+    "minecraft:beef"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:uncooked_pepperoni_pizza"
+  }
+}

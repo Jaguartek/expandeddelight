@@ -49,6 +49,9 @@ public class EDBlocks {
 
     public static Supplier<Block> CRANBERRY_PLANT;
     public static Supplier<Block> CRANBERRY_COBBLER;
+    public static Supplier<Block> CHEESE_PIZZA;
+    public static Supplier<Block> SAUSAGE_PIZZA;
+    public static Supplier<Block> PEPPERONI_PIZZA;
     public static Supplier<Block> HONEYED_GOAT_CHEESE_TART;
 
     public EDBlocks() {}
@@ -107,6 +110,12 @@ public class EDBlocks {
                 () -> new CranberryPlantBlock(RegUtils.blockPropsCopy(Blocks.LILY_PAD).mapColor(MapColor.PLANT).sound(SoundType.LILY_PAD)));
         CRANBERRY_COBBLER = RegUtils.regBlock("cranberry_cobbler",
                 () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CRANBERRY_COBBLER_SLICE.get()));
+        CHEESE_PIZZA = RegUtils.regBlock("cheese_pizza",
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CHEESE_PIZZA_SLICE.get()));
+        SAUSAGE_PIZZA = RegUtils.regBlock("sausage_pizza",
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.SAUSAGE_PIZZA_SLICE.get()));
+        PEPPERONI_PIZZA = RegUtils.regBlock("pepperoni_pizza",
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.PEPPERONI_PIZZA_SLICE.get()));
         HONEYED_GOAT_CHEESE_TART = RegUtils.regBlock("honeyed_goat_cheese_tart",
                 () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.HONEYED_GOAT_CHEESE_TART_SLICE.get()));
 
