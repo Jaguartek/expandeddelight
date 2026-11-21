@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:baked_potato",
+    "farmersdelight:cooked_bacon",
+    "#c:foods/cheese"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:loaded_baked_potato"
+  }
+}
