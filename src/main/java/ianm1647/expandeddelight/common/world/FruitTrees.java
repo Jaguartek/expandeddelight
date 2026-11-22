@@ -35,6 +35,14 @@ public final class FruitTrees {
         FRUITS.put(Blocks.BIRCH_LEAVES, () -> EDBlocks.LEMON_FRUIT.get());
         FRUITS.put(Blocks.ACACIA_LEAVES, () -> EDBlocks.ORANGE_FRUIT.get());
         FRUITS.put(Blocks.CHERRY_LEAVES, () -> EDBlocks.CHERRY_FRUIT.get());
+
+        // Block states cache "isRandomlyTicking" when the game starts, before this mod loads and before
+        // the mixin could see FRUITS. Rebuild the cache for the fruit-bearing leaves so the mixin takes effect.
+        for (Block leaves : FRUITS.keySet()) {
+            for (BlockState state : leaves.getStateDefinition().getPossibleStates()) {
+                state.initCache();
+            }
+        }
     }
 
     /** True for naturally generated (non persistent) leaves of a fruit tree species. */
