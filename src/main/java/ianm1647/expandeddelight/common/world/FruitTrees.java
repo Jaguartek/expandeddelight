@@ -24,7 +24,7 @@ public final class FruitTrees {
     /** 1 in N chance per leaf random tick to try to grow a bud (tune this for fruit density/regrowth speed). */
     public static final int BUD_CHANCE = 40;
     /** Percentage of natural trees (decided per trunk) that bear fruit at all. */
-    public static final int FRUITING_TREE_PERCENT = 50;
+    public static final int FRUITING_TREE_PERCENT = 20;
 
     private static final Map<Block, Supplier<Block>> FRUITS = new HashMap<>();
 
@@ -50,42 +50,20 @@ public final class FruitTrees {
         return FRUITS.containsKey(state.getBlock()) && !state.getValue(LeavesBlock.PERSISTENT);
     }
 
-    // TEMPORARY DEBUG: counts how far leaf ticks get through the checks. Remove once fruit growth is confirmed.
-    private static final java.util.concurrent.atomic.AtomicIntegerArray DEBUG = new java.util.concurrent.atomic.AtomicIntegerArray(10);
-    private static final String[] DEBUG_NAMES = {"calls", "bearsFruit", "notDecaying", "chance", "airBelow", "canSurvive", "noFruitNearby", "fruitingTree", "placed", "unused"};
-
-    private static void dbg(int stage) {
-        DEBUG.incrementAndGet(stage);
-        if (stage == 0 && (DEBUG.get(0) == 1 || DEBUG.get(0) % 2000 == 0)) {
-            StringBuilder sb = new StringBuilder("[FruitTrees debug]");
-            for (int i = 0; i < 9; i++) sb.append(' ').append(DEBUG_NAMES[i]).append('=').append(DEBUG.get(i));
-            ianm1647.expandeddelight.ExpandedDelight.LOGGER.info(sb.toString());
-        }
-    }
-
     public static void tryGrow(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        dbg(0);
         if (!bearsFruit(state)) return;
-        dbg(1);
         if (state.getValue(LeavesBlock.DISTANCE) >= 7) return; // decaying leaf
-        dbg(2);
         if (random.nextInt(BUD_CHANCE) != 0) return;
-        dbg(3);
 
         BlockPos below = pos.below();
         if (!level.isEmptyBlock(below)) return;
-        dbg(4);
 
         BlockState fruit = FRUITS.get(state.getBlock()).get().defaultBlockState();
         if (!fruit.canSurvive(level, below)) return;
-        dbg(5);
         if (fruitNearby(level, pos)) return;
-        dbg(6);
         if (!isFruitingTree(level, pos, state)) return;
-        dbg(7);
 
         level.setBlock(below, fruit, 2);
-        dbg(8);
     }
 
     private static boolean fruitNearby(ServerLevel level, BlockPos pos) {
