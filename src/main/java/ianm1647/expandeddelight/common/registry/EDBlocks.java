@@ -15,6 +15,10 @@ import java.util.function.Supplier;
 
 public class EDBlocks {
 
+    public static Supplier<Block> APPLE_FRUIT;
+    public static Supplier<Block> ORANGE_FRUIT;
+    public static Supplier<Block> LEMON_FRUIT;
+    public static Supplier<Block> CHERRY_FRUIT;
     public static Supplier<Block> CINNAMON_SAPLING;
     public static Supplier<Block> CINNAMON_LEAVES;
     public static Supplier<Block> CINNAMON_LOG;
@@ -57,6 +61,15 @@ public class EDBlocks {
     public EDBlocks() {}
 
     public static void register() {
+        APPLE_FRUIT = RegUtils.regBlock("apple_fruit",
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+        ORANGE_FRUIT = RegUtils.regBlock("orange_fruit",
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+        LEMON_FRUIT = RegUtils.regBlock("lemon_fruit",
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+        CHERRY_FRUIT = RegUtils.regBlock("cherry_fruit",
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+
         CINNAMON_SAPLING = RegUtils.regBlock("cinnamon_sapling",
                 () -> new SaplingBlock(EDTreeGrowers.CINNAMON, RegUtils.blockPropsCopy(Blocks.OAK_SAPLING)));
         CINNAMON_LEAVES = RegUtils.regBlock("cinnamon_leaves",

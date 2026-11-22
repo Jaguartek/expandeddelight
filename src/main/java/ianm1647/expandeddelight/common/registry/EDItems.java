@@ -63,6 +63,9 @@ public class EDItems {
     public static Supplier<Item> ASPARAGUS;
     public static Supplier<Item> ASPARAGUS_SEEDS;
     public static Supplier<Item> SWEET_POTATO;
+    public static Supplier<Item> ORANGE;
+    public static Supplier<Item> LEMON;
+    public static Supplier<Item> CHERRY;
     public static Supplier<Item> BAKED_SWEET_POTATO;
     public static Supplier<Item> LOADED_BAKED_POTATO;
     public static Supplier<Item> CHILI_PEPPER;
@@ -210,6 +213,9 @@ public class EDItems {
         PEANUT = registerWithTab("peanut", () -> new BlockItem(EDBlocks.PEANUT_CROP.get(), foodItem(1, 0f).useItemDescriptionPrefix()));
         CRANBERRIES = registerWithTab("cranberries", () -> new LilypadCropItem(EDBlocks.CRANBERRY_PLANT.get(), foodItem(2, 0.5f)));
 
+        ORANGE = registerWithTab("orange", () -> new Item(foodItem(4, 0.3f)));
+        LEMON = registerWithTab("lemon", () -> new Item(foodItem(2, 0.1f)));
+        CHERRY = registerWithTab("cherry", () -> new Item(foodItem(2, 0.2f)));
         BAKED_SWEET_POTATO = registerWithTab("baked_sweet_potato", () -> new Item(foodItem(6, 0.4f)));
         LOADED_BAKED_POTATO = registerWithTab("loaded_baked_potato", () -> new Item(foodItem(10, 0.6f)));
 

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:apple",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "expandeddelight:apple_fruit",
+              "properties": {
+                "age": "3"
+              }
+            },
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "expandeddelight:blocks/apple_fruit"
+}

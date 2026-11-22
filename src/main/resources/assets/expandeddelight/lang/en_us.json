@@ -108,5 +108,11 @@
   "item.expandeddelight.uncooked_pepperoni_pizza": "Uncooked Pepperoni Pizza",
   "item.expandeddelight.pepperoni_pizza_slice": "Slice of Pepperoni Pizza",
   "block.expandeddelight.pepperoni_pizza": "Pepperoni Pizza",
-  "item.expandeddelight.tomato_soup": "Tomato Soup"
+  "item.expandeddelight.tomato_soup": "Tomato Soup",
+  "block.expandeddelight.apple_fruit": "Apple",
+  "block.expandeddelight.orange_fruit": "Orange",
+  "block.expandeddelight.lemon_fruit": "Lemon",
+  "block.expandeddelight.cherry_fruit": "Cherry",
+  "item.expandeddelight.orange": "Orange",
+  "item.expandeddelight.cherry": "Cherry"
 }
