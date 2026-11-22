@@ -64,7 +64,6 @@ public class EDItems {
     public static Supplier<Item> ASPARAGUS_SEEDS;
     public static Supplier<Item> SWEET_POTATO;
     public static Supplier<Item> ORANGE;
-    public static Supplier<Item> LEMON;
     public static Supplier<Item> CHERRY;
     public static Supplier<Item> BAKED_SWEET_POTATO;
     public static Supplier<Item> LOADED_BAKED_POTATO;
