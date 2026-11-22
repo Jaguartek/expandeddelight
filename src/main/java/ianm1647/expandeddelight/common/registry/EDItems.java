@@ -145,6 +145,7 @@ public class EDItems {
     public static Supplier<Item> ASPARAGUS_SOUP;
     public static Supplier<Item> ASPARAGUS_SOUP_CREAMY;
     public static Supplier<Item> PEANUT_HONEY_SOUP;
+    public static Supplier<Item> TOMATO_SOUP;
     public static Supplier<Item> CHICKEN_GOAT_CHEESE_SOUP;
 
     public static Supplier<Item> MAC_AND_CHEESE;
@@ -269,6 +270,7 @@ public class EDItems {
         ASPARAGUS_SOUP = registerWithTab("asparagus_soup", () -> new ConsumableItem(stewItem(10, 0.8f)));
         ASPARAGUS_SOUP_CREAMY = registerWithTab("asparagus_soup_creamy", () -> new ConsumableItem(stewItem(11, 0.9f)));
         PEANUT_HONEY_SOUP = registerWithTab("peanut_honey_soup", () -> new ConsumableItem(stewItem(10, 0.8f)));
+        TOMATO_SOUP = registerWithTab("tomato_soup", () -> new ConsumableItem(stewItem(10, 0.8f)));
         MAC_AND_CHEESE = registerWithTab("mac_and_cheese", () -> new ConsumableItem(stewItem(12, 0.8f)));
 
         ASPARAGUS_BACON_MEAL = registerWithTab("asparagus_and_bacon_cheesy", () -> new ConsumableItem(mealItem(10, 0.8f)));

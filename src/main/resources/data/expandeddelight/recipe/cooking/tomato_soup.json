@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 0.8,
+  "ingredients": [
+    "farmersdelight:tomato_sauce",
+    "#c:crops/garlic"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:tomato_soup"
+  }
+}
