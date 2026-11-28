@@ -3,7 +3,8 @@
   "category": "misc",
   "ingredients": [
     "minecraft:bowl",
-    "#expandeddelight:milk",
+    "#c:foods/milk",
+    "expandeddelight:peanut",
     "expandeddelight:peanut",
     "expandeddelight:cherry",
     "minecraft:cocoa_beans"

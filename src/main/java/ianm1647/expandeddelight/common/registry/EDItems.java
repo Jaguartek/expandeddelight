@@ -252,10 +252,10 @@ public class EDItems {
         ORANGE_SLICES = registerWithTab("orange_slices", () -> new Item(pizzaSliceItem(2, 0.3f)));
         ORANGE_CHICKEN = registerWithTab("orange_chicken", () -> new ConsumableItem(mealItem(12, 0.9f)));
         LEMON_CHICKEN = registerWithTab("lemon_chicken", () -> new ConsumableItem(mealItem(12, 0.9f)));
-        LEMONADE = registerWithTab("lemonade", () -> new Item(drinkItem(2, 1.0f, MobEffects.FIRE_RESISTANCE)));
-        PINK_LEMONADE = registerWithTab("pink_lemonade", () -> new Item(drinkItem(2, 1.0f, MobEffects.SLOW_FALLING)));
+        LEMONADE = registerWithTab("lemonade", () -> new Item(drinkItem(4, 1.0f, MobEffects.FIRE_RESISTANCE)));
+        PINK_LEMONADE = registerWithTab("pink_lemonade", () -> new Item(drinkItem(4, 1.0f, MobEffects.SLOW_FALLING)));
         FRUIT_SMOOTHIE = registerWithTab("fruit_smoothie", () -> new Item(drinkItem(6, 1.2f, MobEffects.ABSORPTION)));
-        SUNDAE = registerWithTab("sundae", () -> new ConsumableItem(stewItem(9, 0.7f)));
+        SUNDAE = registerWithTab("sundae", () -> new Item(dessertBowlItem(6, 0.7f)));
         LEMON_MERINGUE_PIE = registerWithTab("lemon_meringue_pie", () -> new BlockItem(EDBlocks.LEMON_MERINGUE_PIE.get(), basicItem().useBlockDescriptionPrefix()));
         LEMON_MERINGUE_PIE_SLICE = registerWithTab("lemon_meringue_pie_slice", () -> new Item(pieSliceItem(3, 0.3f)));
         UNCOOKED_CHEESE_PIZZA = registerWithTab("uncooked_cheese_pizza", () -> new Item(basicItem()));
@@ -357,6 +357,12 @@ public class EDItems {
     public static Item.Properties stewItem(int nutrition, float saturation) {
         return basicItem().craftRemainder(Items.BOWL).stacksTo(16)
                 .food(food(nutrition, saturation), consumable(Consumables.defaultFood(), ModEffects.COMFORT, 2400));
+    }
+
+    /** Eaten from a bowl: the empty bowl is returned when the food is eaten (not when it is crafted). */
+    public static Item.Properties dessertBowlItem(int nutrition, float saturation) {
+        return basicItem().usingConvertsTo(Items.BOWL).stacksTo(16)
+                .food(food(nutrition, saturation), consumable(Consumables.defaultFood(), ModEffects.COMFORT, 1200));
     }
 
     public static Item.Properties saladItem(int nutrition, float saturation) {

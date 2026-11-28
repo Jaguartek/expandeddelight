@@ -7,7 +7,7 @@
     "expandeddelight:cherry",
     "expandeddelight:lemon",
     "minecraft:sweet_berries",
-    "#expandeddelight:milk",
+    "#c:foods/milk",
     "minecraft:glass_bottle"
   ],
   "result": {
