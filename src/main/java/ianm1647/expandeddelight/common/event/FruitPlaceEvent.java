@@ -14,7 +14,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * Sneak + right click with an apple, orange, lemon or cherry hangs a ripe fruit under leaves, for decoration.
+ * Sneak + right click with an apple, orange, lemon or cherry hangs a ripe fruit under leaves, or sets it on a solid
+ * surface, for decoration.
  * Hand placed fruit has no effect on whether a tree bears fruit (that is decided by the trunk position).
  */
 public class FruitPlaceEvent {
@@ -30,8 +31,12 @@ public class FruitPlaceEvent {
             BlockPos target = hitResult.getBlockPos().relative(hitResult.getDirection());
             if (!level.isEmptyBlock(target)) return InteractionResult.PASS;
 
-            BlockState state = fruit.defaultBlockState().setValue(FruitBlock.AGE, FruitBlock.MAX_AGE);
-            if (!state.canSurvive(level, target)) return InteractionResult.PASS;
+            BlockState ripe = fruit.defaultBlockState().setValue(FruitBlock.AGE, FruitBlock.MAX_AGE);
+            BlockState state = ripe.setValue(FruitBlock.HANGING, true);
+            if (!state.canSurvive(level, target)) {
+                state = ripe.setValue(FruitBlock.HANGING, false);
+                if (!state.canSurvive(level, target)) return InteractionResult.PASS;
+            }
 
             if (!level.isClientSide()) {
                 level.setBlock(target, state, 3);

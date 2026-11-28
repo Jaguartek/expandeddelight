@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "expandeddelight:orange"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "expandeddelight:orange_slices"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

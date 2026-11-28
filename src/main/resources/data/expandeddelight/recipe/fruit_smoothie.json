@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:apple",
+    "expandeddelight:orange",
+    "expandeddelight:cherry",
+    "expandeddelight:lemon",
+    "minecraft:sweet_berries",
+    "#expandeddelight:milk",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:fruit_smoothie"
+  }
+}

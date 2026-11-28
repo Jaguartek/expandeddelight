@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    "expandeddelight:orange",
+    "minecraft:chicken",
+    "farmersdelight:rice",
+    "minecraft:sugar",
+    "expandeddelight:chili_pepper"
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:orange_chicken"
+  }
+}

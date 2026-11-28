@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "expandeddelight:lemon",
+    "e": "#c:eggs",
+    "x": "minecraft:sugar",
+    "O": "farmersdelight:pie_crust"
+  },
+  "pattern": [
+    "xex",
+    "aaa",
+    " O "
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:lemon_meringue_pie"
+  }
+}

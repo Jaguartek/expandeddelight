@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "expandeddelight:lemon",
+    "expandeddelight:cherry",
+    "minecraft:sugar",
+    "minecraft:water_bucket",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:pink_lemonade"
+  }
+}

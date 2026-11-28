@@ -19,6 +19,7 @@ public class EDBlocks {
     public static Supplier<Block> ORANGE_FRUIT;
     public static Supplier<Block> LEMON_FRUIT;
     public static Supplier<Block> CHERRY_FRUIT;
+    public static Supplier<Block> LEMON_MERINGUE_PIE;
     public static Supplier<Block> CINNAMON_SAPLING;
     public static Supplier<Block> CINNAMON_LEAVES;
     public static Supplier<Block> CINNAMON_LOG;
@@ -123,6 +124,8 @@ public class EDBlocks {
                 () -> new CranberryPlantBlock(RegUtils.blockPropsCopy(Blocks.LILY_PAD).mapColor(MapColor.PLANT).sound(SoundType.LILY_PAD)));
         CRANBERRY_COBBLER = RegUtils.regBlock("cranberry_cobbler",
                 () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CRANBERRY_COBBLER_SLICE.get()));
+        LEMON_MERINGUE_PIE = RegUtils.regBlock("lemon_meringue_pie",
+                () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.LEMON_MERINGUE_PIE_SLICE.get()));
         CHEESE_PIZZA = RegUtils.regBlock("cheese_pizza",
                 () -> new PieBlock(RegUtils.blockPropsCopy(Blocks.CAKE), () -> EDItems.CHEESE_PIZZA_SLICE.get()));
         SAUSAGE_PIZZA = RegUtils.regBlock("sausage_pizza",

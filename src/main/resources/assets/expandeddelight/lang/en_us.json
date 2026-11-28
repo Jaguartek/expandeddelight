@@ -117,5 +117,14 @@
   "item.expandeddelight.cherry": "Cherry",
   "item.expandeddelight.orange_juice": "Orange Juice",
   "item.expandeddelight.lemon_juice": "Lemon Juice",
-  "item.expandeddelight.cherry_juice": "Cherry Juice"
+  "item.expandeddelight.cherry_juice": "Cherry Juice",
+  "item.expandeddelight.orange_slices": "Orange Slices",
+  "item.expandeddelight.orange_chicken": "Orange Chicken",
+  "item.expandeddelight.lemon_chicken": "Lemon Chicken",
+  "item.expandeddelight.lemonade": "Lemonade",
+  "item.expandeddelight.pink_lemonade": "Pink Lemonade",
+  "item.expandeddelight.fruit_smoothie": "Fruit Smoothie",
+  "item.expandeddelight.sundae": "Sundae",
+  "item.expandeddelight.lemon_meringue_pie_slice": "Slice of Lemon Meringue Pie",
+  "block.expandeddelight.lemon_meringue_pie": "Lemon Meringue Pie"
 }

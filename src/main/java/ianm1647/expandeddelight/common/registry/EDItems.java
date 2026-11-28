@@ -111,6 +111,12 @@ public class EDItems {
     public static Supplier<Item> ORANGE_JUICE;
     public static Supplier<Item> LEMON_JUICE;
     public static Supplier<Item> CHERRY_JUICE;
+    public static Supplier<Item> PINK_LEMONADE;
+    public static Supplier<Item> ORANGE_SLICES;
+    public static Supplier<Item> ORANGE_CHICKEN;
+    public static Supplier<Item> LEMON_CHICKEN;
+    public static Supplier<Item> SUNDAE;
+    public static Supplier<Item> FRUIT_SMOOTHIE;
     public static Supplier<Item> LEMONADE;
     public static Supplier<Item> SWEET_BERRY_LEMONADE;
     public static Supplier<Item> GLOW_BERRY_LEMONADE;
@@ -243,6 +249,15 @@ public class EDItems {
 
         CRANBERRY_COBBLER = registerWithTab("cranberry_cobbler", () -> new BlockItem(EDBlocks.CRANBERRY_COBBLER.get(), basicItem().useBlockDescriptionPrefix()));
         CRANBERRY_COBBLER_SLICE = registerWithTab("cranberry_cobbler_slice", () -> new Item(pieSliceItem(3, 0.3f)));
+        ORANGE_SLICES = registerWithTab("orange_slices", () -> new Item(pizzaSliceItem(2, 0.3f)));
+        ORANGE_CHICKEN = registerWithTab("orange_chicken", () -> new ConsumableItem(mealItem(12, 0.9f)));
+        LEMON_CHICKEN = registerWithTab("lemon_chicken", () -> new ConsumableItem(mealItem(12, 0.9f)));
+        LEMONADE = registerWithTab("lemonade", () -> new Item(drinkItem(2, 1.0f, MobEffects.FIRE_RESISTANCE)));
+        PINK_LEMONADE = registerWithTab("pink_lemonade", () -> new Item(drinkItem(2, 1.0f, MobEffects.SLOW_FALLING)));
+        FRUIT_SMOOTHIE = registerWithTab("fruit_smoothie", () -> new Item(drinkItem(6, 1.2f, MobEffects.ABSORPTION)));
+        SUNDAE = registerWithTab("sundae", () -> new ConsumableItem(stewItem(9, 0.7f)));
+        LEMON_MERINGUE_PIE = registerWithTab("lemon_meringue_pie", () -> new BlockItem(EDBlocks.LEMON_MERINGUE_PIE.get(), basicItem().useBlockDescriptionPrefix()));
+        LEMON_MERINGUE_PIE_SLICE = registerWithTab("lemon_meringue_pie_slice", () -> new Item(pieSliceItem(3, 0.3f)));
         UNCOOKED_CHEESE_PIZZA = registerWithTab("uncooked_cheese_pizza", () -> new Item(basicItem()));
         CHEESE_PIZZA = registerWithTab("cheese_pizza", () -> new BlockItem(EDBlocks.CHEESE_PIZZA.get(), basicItem().useBlockDescriptionPrefix()));
         CHEESE_PIZZA_SLICE = registerWithTab("cheese_pizza_slice", () -> new Item(pizzaSliceItem(5, 0.5f)));
