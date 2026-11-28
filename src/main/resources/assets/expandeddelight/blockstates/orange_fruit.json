@@ -4,29 +4,25 @@
       "model": "expandeddelight:block/orange_fruit_0"
     },
     "age=0,hanging=false": {
-      "model": "expandeddelight:block/orange_fruit_0",
-      "x": 180
+      "model": "expandeddelight:block/orange_fruit_ground_0"
     },
     "age=1,hanging=true": {
       "model": "expandeddelight:block/orange_fruit_1"
     },
     "age=1,hanging=false": {
-      "model": "expandeddelight:block/orange_fruit_1",
-      "x": 180
+      "model": "expandeddelight:block/orange_fruit_ground_1"
     },
     "age=2,hanging=true": {
       "model": "expandeddelight:block/orange_fruit_2"
     },
     "age=2,hanging=false": {
-      "model": "expandeddelight:block/orange_fruit_2",
-      "x": 180
+      "model": "expandeddelight:block/orange_fruit_ground_2"
     },
     "age=3,hanging=true": {
       "model": "expandeddelight:block/orange_fruit_3"
     },
     "age=3,hanging=false": {
-      "model": "expandeddelight:block/orange_fruit_3",
-      "x": 180
+      "model": "expandeddelight:block/orange_fruit_ground_3"
     }
   }
 }
