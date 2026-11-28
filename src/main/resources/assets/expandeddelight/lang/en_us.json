@@ -114,5 +114,8 @@
   "block.expandeddelight.lemon_fruit": "Lemon",
   "block.expandeddelight.cherry_fruit": "Cherry",
   "item.expandeddelight.orange": "Orange",
-  "item.expandeddelight.cherry": "Cherry"
+  "item.expandeddelight.cherry": "Cherry",
+  "item.expandeddelight.orange_juice": "Orange Juice",
+  "item.expandeddelight.lemon_juice": "Lemon Juice",
+  "item.expandeddelight.cherry_juice": "Cherry Juice"
 }

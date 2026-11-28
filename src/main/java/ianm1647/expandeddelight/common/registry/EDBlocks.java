@@ -62,13 +62,13 @@ public class EDBlocks {
 
     public static void register() {
         APPLE_FRUIT = RegUtils.regBlock("apple_fruit",
-                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion(), () -> net.minecraft.world.item.Items.APPLE));
         ORANGE_FRUIT = RegUtils.regBlock("orange_fruit",
-                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion(), () -> EDItems.ORANGE.get()));
         LEMON_FRUIT = RegUtils.regBlock("lemon_fruit",
-                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion(), () -> EDItems.LEMON.get()));
         CHERRY_FRUIT = RegUtils.regBlock("cherry_fruit",
-                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion()));
+                () -> new FruitBlock(RegUtils.blockProps().mapColor(MapColor.PLANT).strength(0.2F).sound(SoundType.CROP).noOcclusion(), () -> EDItems.CHERRY.get()));
 
         CINNAMON_SAPLING = RegUtils.regBlock("cinnamon_sapling",
                 () -> new SaplingBlock(EDTreeGrowers.CINNAMON, RegUtils.blockPropsCopy(Blocks.OAK_SAPLING)));

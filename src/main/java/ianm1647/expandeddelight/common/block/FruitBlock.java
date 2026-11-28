@@ -5,6 +5,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -17,6 +20,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.function.Supplier;
 
 /**
  * A fruit hanging from the underside of a leaf block. It ripens over time (age 0-3) and only drops
@@ -37,8 +42,11 @@ public class FruitBlock extends Block {
         }
     }
 
-    public FruitBlock(Properties properties) {
+    private final Supplier<Item> fruitItem;
+
+    public FruitBlock(Properties properties, Supplier<Item> fruitItem) {
         super(properties);
+        this.fruitItem = fruitItem;
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
@@ -82,5 +90,19 @@ public class FruitBlock extends Block {
         if (age < MAX_AGE && random.nextInt(RIPEN_CHANCE) == 0) {
             level.setBlock(pos, state.setValue(AGE, age + 1), 2);
         }
+    }
+
+    // Middle click (pick block) gives the fruit item. The exact vanilla signature differs between Minecraft
+    // versions, so a few variants are declared; the one matching this version overrides the vanilla method.
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
+        return new ItemStack(fruitItem.get());
+    }
+
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
+        return new ItemStack(fruitItem.get());
+    }
+
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData, Player player) {
+        return new ItemStack(fruitItem.get());
     }
 }

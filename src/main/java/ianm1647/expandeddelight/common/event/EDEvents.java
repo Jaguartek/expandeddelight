@@ -6,6 +6,7 @@ public class EDEvents {
         StripLogEvent.init();
         MilkGoatEvent.init();
         EDLootEvents.init();
+        FruitPlaceEvent.init();
     }
 
 }

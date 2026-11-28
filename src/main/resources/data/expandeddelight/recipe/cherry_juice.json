@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "expandeddelight:cherry",
+    "expandeddelight:cherry",
+    "expandeddelight:cherry",
+    "expandeddelight:cherry",
+    "minecraft:sugar",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:cherry_juice"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "expandeddelight:lemon",
+    "expandeddelight:lemon",
+    "expandeddelight:lemon",
+    "expandeddelight:lemon",
+    "minecraft:sugar",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "expandeddelight:lemon_juice"
+  }
+}

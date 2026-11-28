@@ -108,6 +108,9 @@ public class EDItems {
     public static Supplier<Item> SWEET_BERRY_JUICE;
     public static Supplier<Item> GLOW_BERRY_JUICE;
     public static Supplier<Item> CRANBERRY_JUICE;
+    public static Supplier<Item> ORANGE_JUICE;
+    public static Supplier<Item> LEMON_JUICE;
+    public static Supplier<Item> CHERRY_JUICE;
     public static Supplier<Item> LEMONADE;
     public static Supplier<Item> SWEET_BERRY_LEMONADE;
     public static Supplier<Item> GLOW_BERRY_LEMONADE;
@@ -263,6 +266,9 @@ public class EDItems {
         SWEET_BERRY_JUICE = registerWithTab("sweet_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.HEALTH_BOOST)));
         GLOW_BERRY_JUICE = registerWithTab("glow_berry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.NIGHT_VISION)));
         CRANBERRY_JUICE = registerWithTab("cranberry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.ABSORPTION)));
+        ORANGE_JUICE = registerWithTab("orange_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.REGENERATION)));
+        LEMON_JUICE = registerWithTab("lemon_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.RESISTANCE)));
+        CHERRY_JUICE = registerWithTab("cherry_juice", () -> new Item(drinkItem(1, 1.2f, MobEffects.LUCK)));
 
         SWEET_BERRY_JELLY = registerWithTab("sweet_berry_jelly", () -> new JellyItem(jellyItem(3, 0.6f, MobEffects.HEALTH_BOOST), true));
         GLOW_BERRY_JELLY = registerWithTab("glow_berry_jelly", () -> new JellyItem(jellyItem(3, 0.6f, MobEffects.NIGHT_VISION), true));
